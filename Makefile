@@ -1,7 +1,7 @@
 all: examples readme
 
 readme:
-	godoc2md github.com/gruzovator/godoc2md > README.md
+	go run . github.com/gruzovator/godoc2md > README.md
 
 examples:
 	godoc2md github.com/kr/fs > examples/fs/README.md
