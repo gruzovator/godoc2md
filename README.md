@@ -8,7 +8,7 @@ It is outdated tool with many problems, but it works well for simple packages (a
 Usage
 
 
-	godoc2md $PACKAGE > $GOPATH/src/$PACKAGE/README.md
+	godoc2md $PACKAGE > README.md
 
 
 

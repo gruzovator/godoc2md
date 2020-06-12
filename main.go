@@ -8,7 +8,7 @@
 //
 // Usage
 //
-//    godoc2md $PACKAGE > $GOPATH/src/$PACKAGE/README.md
+//    godoc2md $PACKAGE > README.md
 package main
 
 import (
