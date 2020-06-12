@@ -1,1 +1,3 @@
-# I'm sorry I cannot offer support for this package any more. Feel free to fork it, you have the source, Luke.
+forked from davecheney/godoc2md
+
+I'm trying to use that tool for docs generation from gitlab ci
