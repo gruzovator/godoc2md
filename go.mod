@@ -1,3 +1,5 @@
-module github.com/davecheney/godoc2md
+module github.com/gruzovator/godoc2md
 
-require golang.org/x/tools v0.0.0-20181011021141-0e57ebad1d6b
+go 1.14
+
+require golang.org/x/tools v0.0.0-20200612022331-742c5eb664c2
