@@ -3,6 +3,8 @@
 # godoc2md
 godoc2md converts godoc formatted package documentation into Markdown format.
 
+It is outdated tool with many problems, but it works well for simple packages (and there is no alternatives).
+
 Usage
 
 

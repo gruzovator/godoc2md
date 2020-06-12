@@ -4,6 +4,7 @@
 
 // godoc2md converts godoc formatted package documentation into Markdown format.
 //
+// It is outdated tool with many problems, but it works well for simple packages (and there is no alternatives).
 //
 // Usage
 //
@@ -92,9 +93,6 @@ func preFunc(text string) string {
 // Original Source https://github.com/golang/tools/blob/master/godoc/godoc.go#L562
 func srcLinkFunc(s string) string {
 	s = path.Clean("/" + s)
-	if !strings.HasPrefix(s, "/src/") {
-		s = "/src" + s
-	}
 	return s
 }
 
@@ -186,7 +184,12 @@ func main() {
 		pres.PackageText = readTemplate("package.txt", pkgTemplate)
 	}
 
-	if err := godoc.CommandLine(os.Stdout, fs, pres, flag.Args()); err != nil {
+	// get output into buffer to replace hardcoded in godoc '/target/' path
+	var buf strings.Builder
+	if err := godoc.CommandLine(&buf, fs, pres, flag.Args()); err != nil {
 		log.Print(err)
 	}
+
+	out := strings.Replace(buf.String(), "](/target/", "](./", -1)
+	fmt.Print(out)
 }
